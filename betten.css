@@ -1,0 +1,101 @@
+/* betten.css */
+
+body {
+    font-family: 'Archivo Narrow', sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* الحاوية العامة لكل المنتجات */
+  .bett-section {
+    max-width: 1000px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 0 20px;
+  }
+  
+  /* كل عنصر منتج */
+  .bett-item img {
+    width: 350px;
+    height: auto;
+    max-height: 240px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  
+  /* صورة السرير */
+  .bett-item img {
+    width: 260px;           /* حجم متوسط كما طلبتِ */
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  
+  /* معلومات المنتج */
+  .bett-info {
+    flex: 1;
+  }
+  
+  .bett-info h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #3c2415;
+  }
+  
+  .bett-info p {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #444;
+  }
+  
+  .bett-info strong {
+    font-size: 18px;
+    color: #3c2415;
+    display: block;
+    margin-bottom: 14px;
+  }
+  
+  /* أزرار التفاصيل والسلة */
+  .bett-info .buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .bett-info .buttons button {
+    background-color: #cbbca3;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .bett-info .buttons button:hover {
+    background-color: #b3a78e;
+  }
+  
+  /* تحسين للموبايل */
+  @media (max-width: 768px) {
+    .bett-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .bett-item img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .bett-info {
+      width: 100%;
+    }
+  }
+  
+ 

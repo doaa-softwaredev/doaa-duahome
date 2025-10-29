@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dua Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Archivo+Narrow&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="left-header">
+      <button class="burger-btn" id="burgerBtn">☰</button>
+      <a href="index.html"><img src="images/dua-logo.png" alt="Dua Logo" class="logo"></a>
+    </div>
+    <div class="right-header">
+      <a href="login.html"><img src="images/user-icon.png" alt="User" class="icon" /></a>
+      <div class="search-container">
+        <img src="images/search-icon.png" alt="Search" class="icon search-icon" id="searchIcon" />
+        <input type="text" id="searchInput" placeholder="Suchen..." />
+      </div>
+      <a href="warenkorb.html">
+        <img src="images/shopping-cart-icon.png" alt="Cart" class="icon" />
+      </a>
+      
+    </div>
+  </header>
+
+  <!-- Burger Menu -->
+  <nav class="side-menu" id="sideMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Produkte</a></li>
+      <li><a href="about.html">Über uns</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero">
+      <a href="products.html">
+        <img src="images/wohnzimmer.png" alt="Wohnzimmer Bild" class="hero-img">
+      </a>
+      <h1 class="hero-title">Dua Home</h1>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <span>&copy; 2024 Doaa Khallouf</span>
+      <span>doaakhallouf20.com</span>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const burgerBtn = document.getElementById('burgerBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    const searchIcon = document.getElementById("searchIcon");
+    const searchContainer = document.querySelector(".search-container");
+
+    burgerBtn.addEventListener('click', () => {
+      sideMenu.classList.toggle('open');
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!sideMenu.contains(event.target) && !burgerBtn.contains(event.target)) {
+        sideMenu.classList.remove('open');
+      }
+    });
+
+    searchIcon.addEventListener("click", () => {
+      searchContainer.classList.toggle("active");
+      const input = document.getElementById("searchInput");
+      if (searchContainer.classList.contains("active")) {
+        input.focus();
+      }
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!searchContainer.contains(e.target) && e.target !== searchIcon) {
+        searchContainer.classList.remove("active");
+      }
+    });
+  </script>
+
+</body>
+</html>

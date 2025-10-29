@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Warenkorb – Dua Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Archivo Narrow', sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .cart-container {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .cart-container h2 {
+      margin-bottom: 30px;
+      color: #3c2415;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+      padding: 20px 0;
+    }
+
+    .cart-item img {
+      width: 120px;
+      height: auto;
+      border-radius: 6px;
+      margin-right: 20px;
+    }
+
+    .item-info {
+      flex: 1;
+    }
+
+    .item-info h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .item-info p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .item-actions {
+      text-align: right;
+    }
+
+    .item-actions span {
+      display: block;
+      font-weight: bold;
+      color: #3c2415;
+      margin-bottom: 8px;
+    }
+
+    .item-actions button {
+      background-color: #cbbca3;
+      color: white;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .summary {
+      margin-top: 30px;
+      text-align: right;
+    }
+
+    .summary p {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .checkout-btn {
+      background-color: #3c2415;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .checkout-btn:hover {
+      background-color: #2e1d10;
+    }
+
+    .burger-btn {
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-right: 1rem;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100vh;
+      background-color: #f6f6f6;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+      padding: 2rem 1.5rem;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+
+    .side-menu.open {
+      left: 0;
+    }
+
+    .side-menu ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .side-menu li {
+      margin-bottom: 1rem;
+    }
+
+    .side-menu a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #ddd;
+      background: white;
+    }
+
+    .left-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    .right-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    .search-container {
+      position: relative;
+    }
+
+    .search-container input {
+      display: none;
+      position: absolute;
+      top: 30px;
+      right: 0;
+      padding: 6px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .search-container.active input {
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #ccc;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="left-header">
+      <button class="burger-btn" id="burgerBtn">☰</button>
+      <img src="images/dua-logo.png" alt="Dua Logo" class="logo">
+    </div>
+    <div class="right-header">
+      <a href="login.html"><img src="images/user-icon.png" alt="User" class="icon" /></a>
+      <div class="search-container">
+        <img src="images/search-icon.png" alt="Search" class="icon search-icon" id="searchIcon" />
+        <input type="text" id="searchInput" placeholder="Suchen..." />
+      </div>
+      <a href="warenkorb.html">
+        <img src="images/shopping-cart-icon.png" alt="Cart" class="icon" />
+      </a>
+    </div>
+  </header>
+
+  <!-- Burger Menu -->
+  <nav class="side-menu" id="sideMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Produkte</a></li>
+      <li><a href="about.html">Über uns</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- Warenkorb -->
+  <main class="cart-container">
+    <h2>Ihr Warenkorb</h2>
+
+    <!-- Produkt 1 -->
+    <div class="cart-item">
+      <img src="images/betten/nora.png" alt="Nora Bett">
+      <div class="item-info">
+        <h3>Nora Bett</h3>
+        <p>140x200cm, Beige</p>
+      </div>
+      <div class="item-actions">
+        <span>399,95 €</span>
+        <button>Entfernen</button>
+      </div>
+    </div>
+
+    <!-- Produkt 2 -->
+    <div class="cart-item">
+      <img src="images/betten/maria.png" alt="Maria Bett">
+      <div class="item-info">
+        <h3>Maria Bett</h3>
+        <p>160x200cm, Grau</p>
+      </div>
+      <div class="item-actions">
+        <span>429,95 €</span>
+        <button>Entfernen</button>
+      </div>
+    </div>
+
+    <!-- Gesamt -->
+    <div class="summary">
+      <p>Gesamtbetrag: 829,90 €</p>
+      <button class="checkout-btn">Zur Kasse</button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Doaa Khallouf</p>
+    <a href="mailto:kontakt@dua-home.de">kontakt@dua-home.de</a>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const burgerBtn = document.getElementById('burgerBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    const searchIcon = document.getElementById("searchIcon");
+    const searchContainer = document.querySelector(".search-container");
+
+    burgerBtn.addEventListener('click', () => {
+      sideMenu.classList.toggle('open');
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!sideMenu.contains(event.target) && !burgerBtn.contains(event.target)) {
+        sideMenu.classList.remove('open');
+      }
+      if (!searchContainer.contains(event.target)) {
+        searchContainer.classList.remove('active');
+      }
+    });
+
+    searchIcon.addEventListener("click", () => {
+      searchContainer.classList.toggle("active");
+      const input = document.getElementById("searchInput");
+      if (searchContainer.classList.contains("active")) {
+        input.focus();
+      }
+    });
+  </script>
+
+</body>
+</html>

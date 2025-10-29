@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Über uns – Dua Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="left-header">
+      <button class="burger-btn" id="burgerBtn">☰</button>
+      <img src="images/dua-logo.png" alt="Dua Logo" class="logo">
+    </div>
+    <div class="right-header">
+      <a href="login.html"><img src="images/user-icon.png" alt="User" class="icon" /></a>
+      <div class="search-container">
+        <img src="images/search-icon.png" alt="Search" class="icon search-icon" id="searchIcon" />
+        <input type="text" id="searchInput" placeholder="Suchen..." />
+      </div>
+      <a href="warenkorb.html">
+        <img src="images/shopping-cart-icon.png" alt="Cart" class="icon" />
+      </a>
+      
+    </div>
+  </header>
+
+  <!-- Burger Menu -->
+  <nav class="side-menu" id="sideMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Produkte</a></li>
+      <li><a href="about.html">Über uns</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+
+    </ul>
+  </nav>
+
+  <!-- About Section -->
+  <main class="about-main">
+    <section class="about-section">
+      <div class="about-text">
+        <h2>Willkommen bei DUA Home</h2>
+        <p>Bei DUA Home glauben wir, dass Ihr Zuhause mehr als nur ein Ort ist – es ist ein Gefühl. Es ist der Raum, in dem Wärme, Stil und Funktionalität zusammenkommen, um Ihre Persönlichkeit widerzuspiegeln.</p>
+
+        <p>Unsere Kollektionen sind sorgfältig ausgewählt, um moderne Eleganz mit natürlichen Materialien zu verbinden. Egal ob Sie Ihr Wohnzimmer mit stilvollen Sofas und gemütlichen Kissen aufwerten möchten, oder einen Hauch Boho ins Esszimmer bringen wollen – bei uns finden Sie alles, was Ihr Herz begehrt.</p>
+
+        <p>Entdecken Sie zeitlose Designs, handgefertigte Stücke und nachhaltige Qualität – all das zu fairen Preisen. Unser Ziel ist es, Ihnen das Einkaufen so angenehm wie möglich zu machen – von der ersten Inspiration bis zur Lieferung vor Ihre Tür.</p>
+
+        <p><strong>DUA Home – wo Stil auf Gefühl trifft.</strong></p>
+      </div>
+
+      <div class="about-image">
+        <img src="images/esszimmer.png" alt="Esszimmer Inspiration">
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h4>Wir über uns</h4>
+        <ul>
+          <li>Was ist DUA</li>
+          <li>Impressum</li>
+          <li>Cookies Richtlinien</li>
+          <li>AGB’s</li>
+          <li>Datenschutzerklärung</li>
+          <li>Compliancepolitik</li>
+          <li>Datenschutzbestimmungen</li>
+          <li>Kontakt</li>
+          <li>#MyDUAStory</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Kundendienst</h4>
+        <ul>
+          <li>Rückgabebedingungen</li>
+          <li>Zahlung</li>
+          <li>Profikunden</li>
+          <li>Versandbedingungen</li>
+          <li>Kontakt</li>
+        </ul>
+        <div class="socials">
+          <span>📘</span>
+          <span>📷</span>
+          <span>📌</span>
+          <span>🎵</span>
+        </div>
+      </div>
+    </div>
+    <div class="payment">
+      <p>Sichere Zahlung garantiert</p>
+      <div class="logos">
+        <span>💳</span>
+        <span>💰</span>
+        <span>📦</span>
+        <span>📱</span>
+        <span>💸</span>
+        <span>🏦</span>
+      </div>
+      <p class="copy">&copy; 2024 © Dua</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const burgerBtn = document.getElementById('burgerBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    burgerBtn.addEventListener('click', () => {
+      sideMenu.classList.toggle('open');
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!sideMenu.contains(event.target) && !burgerBtn.contains(event.target)) {
+        sideMenu.classList.remove('open');
+      }
+    });
+
+    const searchIcon = document.getElementById("searchIcon");
+    const searchContainer = document.querySelector(".search-container");
+
+    searchIcon.addEventListener("click", () => {
+      searchContainer.classList.toggle("active");
+      const input = document.getElementById("searchInput");
+      if (searchContainer.classList.contains("active")) {
+        input.focus();
+      }
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!searchContainer.contains(e.target) && e.target !== searchIcon) {
+        searchContainer.classList.remove("active");
+      }
+    });
+  </script>
+
+</body>
+</html>

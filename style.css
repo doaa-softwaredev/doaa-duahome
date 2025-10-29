@@ -1,0 +1,281 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: sans-serif;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+  background: white;
+}
+
+.left-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 40px;
+}
+
+.burger-btn {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.right-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+/* Burger Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  background-color: #f6f6f6;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+  padding: 2rem 1.5rem;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+.side-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 3rem;
+}
+
+.side-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  margin: 2rem;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 1px solid #ccc;
+  padding: 0 2rem;
+}
+
+.hero-title {
+  position: absolute;
+  top: 25%;
+  left: 7%;
+  font-family: 'Saira Stencil One', sans-serif;
+  font-size: 5rem;
+  color: #3c2415;
+  line-height: 1;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #ccc;
+}
+/* About Page */
+
+/* تنسيقات عامة */
+body {
+  font-family: 'Archivo Narrow', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #222;
+  background-color: #fff;
+}
+
+.about-main {
+  padding: 40px 20px;
+}
+
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.about-text {
+  flex: 1;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.about-text h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* الفوتر */
+footer {
+  border-top: 1px solid #999;
+  padding: 10px 30px;
+  text-align: space-between;
+  font-size: 15px;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer a {
+  color: #000;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* استجابة للشاشات الصغيرة */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+  }
+
+  .about-text,
+  .about-image {
+    width: 100%;
+  }
+}
+
+/* log in*/
+.login-body {
+  font-family: 'Archivo Narrow', sans-serif;
+  background-color: #f3efe8;
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 60px 30px;
+  flex-wrap: wrap;
+}
+
+.login-box,
+.register-box {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #ccc;
+  min-width: 280px;
+  max-width: 400px;
+  flex: 1;
+}
+
+.login-box h2,
+.register-box h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.login-box input,
+.register-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.btn-main {
+  background-color: #cbbca3;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-main:hover {
+  background-color: #b3a78e;
+}
+
+.btn-social {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #aaa;
+  background: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-social img {
+  width: 20px;
+  height: 20px;
+}

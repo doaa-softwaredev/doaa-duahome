@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Betten – Dua</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="products.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="betten.css" />
+ <style>
+    .bett-section {
+      max-width: 1000px;
+      margin: 50px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      font-family: 'Archivo Narrow', sans-serif;
+    }
+
+    .bett-item {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .bett-item img {
+      width: 180px;
+      border-radius: 6px;
+    }
+
+    .bett-info {
+      flex: 1;
+    }
+
+    .bett-info h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .bett-info p {
+      margin-bottom: 8px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .bett-info strong {
+      font-size: 18px;
+      color: #3c2415;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .bett-info .buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .bett-info .buttons button {
+      background-color: #cbbca3;
+      border: none;
+      color: white;
+      font-weight: bold;
+      padding: 8px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .bett-info .buttons button:hover {
+      background-color: #b3a78e;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="left-header">
+      <button class="burger-btn" id="burgerBtn">☰</button>
+      <img src="images/dua-logo.png" alt="Dua Logo" class="logo">
+    </div>
+    <div class="right-header">
+      <a href="login.html"><img src="images/user-icon.png" alt="User" class="icon" /></a>
+      <div class="search-container">
+        <img src="images/search-icon.png" alt="Search" class="icon search-icon" id="searchIcon" />
+        <input type="text" id="searchInput" placeholder="Suchen..." />
+      </div>
+      <a href="warenkorb.html">
+        <img src="images/shopping-cart-icon.png" alt="Cart" class="icon" />
+      </a>
+      
+    </div>
+  </header>
+
+  <!-- Burger Menu -->
+  <nav class="side-menu" id="sideMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Produkte</a></li>
+      <li><a href="about.html">Über uns</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+
+    </ul>
+  </nav>
+
+  <!-- Content: Betten -->
+  <main class="bett-section">
+    <div class="bett-item">
+      <img src="images/betten/nora.png" alt="Nora Bett">
+      <div class="bett-info">
+        <h3>Nora</h3>
+        <p>Mit Bettkasten · Größe: 140x200cm</p>
+        <strong>399,95 €</strong>
+        <div class="buttons">
+          <button>In den Warenkorb</button>
+          <button>Details</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bett-item">
+      <img src="images/betten/talia.png" alt="Talia Bett">
+      <div class="bett-info">
+        <h3>Talia</h3>
+        <p>Mit Bettkasten · Größe: 180x200cm</p>
+        <strong>449,95 €</strong>
+        <div class="buttons">
+          <button>In den Warenkorb</button>
+          <button>Details</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bett-item">
+      <img src="images/betten/maria.png" alt="Maria Bett">
+      <div class="bett-info">
+        <h3>Maria</h3>
+        <p>Mit Bettkasten · Größe: 160x200cm</p>
+        <strong>429,95 €</strong>
+        <div class="buttons">
+          <button>In den Warenkorb</button>
+          <button>Details</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bett-item">
+      <img src="images/betten/norena.png" alt="Norena Bett">
+      <div class="bett-info">
+        <h3>Norena</h3>
+        <p>Mit Bettkasten · Größe: 160x200cm</p>
+        <strong>479,95 €</strong>
+        <div class="buttons">
+          <button>In den Warenkorb</button>
+          <button>Details</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bett-item">
+      <img src="images/betten/maya.png" alt="Maya Bett">
+      <div class="bett-info">
+        <h3>Maya</h3>
+        <p>Mit Bettkasten · Größe: 140x200cm</p>
+        <strong>409,95 €</strong>
+        <div class="buttons">
+          <button>In den Warenkorb</button>
+          <button>Details</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Doaa Khallouf</p>
+    <a href="mailto:doaakhallouf20@gmail.com">doaakhallouf20@gmail.com</a>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const burgerBtn = document.getElementById('burgerBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    const searchIcon = document.getElementById("searchIcon");
+    const searchContainer = document.querySelector(".search-container");
+
+    burgerBtn.addEventListener('click', () => {
+      sideMenu.classList.toggle('open');
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!sideMenu.contains(event.target) && !burgerBtn.contains(event.target)) {
+        sideMenu.classList.remove('open');
+      }
+      if (!searchContainer.contains(event.target)) {
+        searchContainer.classList.remove('active');
+      }
+    });
+
+    searchIcon.addEventListener("click", () => {
+      searchContainer.classList.toggle("active");
+      const input = document.getElementById("searchInput");
+      if (searchContainer.classList.contains("active")) {
+        input.focus();
+      }
+    });
+  </script>
+
+</body>
+</html>

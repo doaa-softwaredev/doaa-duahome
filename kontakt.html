@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontakt – Dua Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
+  <style>
+    .kontakt-section {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
+      font-family: 'Archivo Narrow', sans-serif;
+    }
+
+    .kontakt-section h2 {
+      font-size: 26px;
+      margin-bottom: 20px;
+      color: #3c2415;
+    }
+
+    .kontakt-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .kontakt-form input,
+    .kontakt-form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #aaa;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 16px;
+    }
+
+    .kontakt-form button {
+      width: fit-content;
+      padding: 10px 20px;
+      background-color: #cbbca3;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .kontakt-info {
+      margin-top: 40px;
+    }
+
+    .kontakt-info h3 {
+      margin-bottom: 10px;
+    }
+
+    .kontakt-info p {
+      margin-bottom: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .kontakt-section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="left-header">
+      <button class="burger-btn" id="burgerBtn">☰</button>
+      <img src="images/dua-logo.png" alt="Dua Logo" class="logo">
+    </div>
+    <div class="right-header">
+      <a href="login.html"><img src="images/user-icon.png" alt="User" class="icon" /></a>
+      <div class="search-container">
+        <img src="images/search-icon.png" alt="Search" class="icon search-icon" id="searchIcon" />
+        <input type="text" id="searchInput" placeholder="Suchen..." />
+      </div>
+      <a href="warenkorb.html">
+        <img src="images/shopping-cart-icon.png" alt="Cart" class="icon" />
+      </a>
+      
+    </div>
+  </header>
+
+  <!-- Burger Menu -->
+  <nav class="side-menu" id="sideMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Produkte</a></li>
+      <li><a href="about.html">Über uns</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- Kontakt Section -->
+  <main class="kontakt-section">
+    <h2>Kontaktformular</h2>
+    <form class="kontakt-form">
+      <input type="text" placeholder="Ihr Name" required />
+      <input type="email" placeholder="Ihre E-Mail-Adresse" required />
+      <textarea rows="6" placeholder="Ihre Nachricht" required></textarea>
+      <button type="submit">Nachricht senden</button>
+    </form>
+
+    <div class="kontakt-info">
+      <h3>Oder kontaktieren Sie uns direkt:</h3>
+      <p>📧 E-Mail: kontakt@dua-home.de</p>
+      <p>📞 Telefon: +49 40 123 456 789</p>
+      <p>🏠 Adresse: Musterstraße 12, 12345 Hamburg</p>
+      <p>🕐 Öffnungszeiten: Mo - Fr, 09:00 - 17:00 Uhr</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Doaa Khallouf</p>
+    <a href="mailto:kontakt@dua-home.de">kontakt@dua-home.de</a>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const burgerBtn = document.getElementById('burgerBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    const searchIcon = document.getElementById("searchIcon");
+    const searchContainer = document.querySelector(".search-container");
+
+    burgerBtn.addEventListener('click', () => {
+      sideMenu.classList.toggle('open');
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!sideMenu.contains(event.target) && !burgerBtn.contains(event.target)) {
+        sideMenu.classList.remove('open');
+      }
+      if (!searchContainer.contains(event.target)) {
+        searchContainer.classList.remove('active');
+      }
+    });
+
+    searchIcon.addEventListener("click", () => {
+      searchContainer.classList.toggle("active");
+      const input = document.getElementById("searchInput");
+      if (searchContainer.classList.contains("active")) {
+        input.focus();
+      }
+    });
+  </script>
+
+</body>
+</html>
